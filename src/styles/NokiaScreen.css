@@ -1,0 +1,242 @@
+.nokia-screen {
+  width: 276px;
+  height: 173px;
+  background-color: #8bac0f;
+  border: 5px solid #333;
+  margin: 10px 0 20px;
+  padding: 5px;
+  font-family: monospace;
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-screen, .playing-screen, .guessing-screen, .success-screen, .failure-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.nokia-logo {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.game-title {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.press-start {
+  font-size: 10px;
+  animation: blink 1s infinite;
+}
+
+.input-text {
+  font-size: 18px;
+  margin-top: 10px;
+  min-height: 23px;
+  width: 100%;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.prompt {
+  font-size: 12px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Feedback flash animations */
+.feedback-correct {
+  animation: correctFlash 1.5s ease-out;
+}
+
+.feedback-incorrect {
+  animation: incorrectFlash 1.5s ease-out;
+}
+
+@keyframes correctFlash {
+  0%, 100% {
+    background-color: var(--nokia-screen-bg);
+  }
+  30% {
+    background-color: rgba(0, 255, 0, 0.3);
+  }
+}
+
+@keyframes incorrectFlash {
+  0%, 100% {
+    background-color: var(--nokia-screen-bg);
+  }
+  30% {
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+}
+
+/* Feedback icons */
+.feedback-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.feedback-icon.correct {
+  color: #0a0;
+}
+
+.feedback-icon.incorrect {
+  color: #a00;
+}
+
+/* Current score display */
+.current-score {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* Nokia Snake-style progress bar */
+.nokia-progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #405508; /* Darker background */
+  border: 1px solid #000;
+  margin: 8px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.nokia-progress-fill {
+  height: 100%;
+  background-color: #0f380f; /* Classic dark Nokia green */
+  transition: width 0.3s ease-in-out;
+}
+
+/* Optional: Add pixelated effect for more authenticity */
+.nokia-progress-fill {
+  image-rendering: pixelated;
+  box-shadow: 2px 0 0 #8bac0f; /* Creates a small highlight effect */
+}
+
+/* Make sure progress bar is at the top in guessing screen */
+.guessing-screen .nokia-progress-bar {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Music player timeline bar */
+.nokia-timeline-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #405508; /* Darker background */
+  border: 1px solid #000;
+  margin: 8px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.nokia-timeline-fill {
+  height: 100%;
+  background-color: #0f380f; /* Classic dark Nokia green */
+  position: relative;
+  transition: width 0.1s linear; /* Smoother updates */
+}
+
+/* Add a small dot to look like a timeline cursor */
+.nokia-timeline-fill::after {
+  content: '';
+  position: absolute;
+  right: -2px;
+  top: -1px;
+  width: 4px;
+  height: 8px;
+  background-color: #8bac0f;
+  border-radius: 50%;
+}
+
+/* Make sure timeline bar stands out */
+.playing-screen .nokia-timeline-bar,
+.guessing-screen .nokia-timeline-bar {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Pixelated Running Man Animation */
+.nokia-animation {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+}
+
+/* Timer styles - make it less obtrusive */
+.nokia-timer {
+  font-size: 14px;  /* Smaller font size */
+  font-weight: bold;
+  margin: 2px 0 6px;  /* Reduced margins */
+  padding: 2px 6px;   /* Smaller padding */
+  border: 1px solid #0f380f;  /* Thinner border */
+  background-color: #0f380f;
+  color: #8bac0f;
+  border-radius: 4px;
+  width: 60%;  /* Narrower width */
+  text-align: center;
+  letter-spacing: normal;  /* Normal letter spacing */
+}
+
+/* Warning state when time is running low */
+.nokia-timer-warning {
+  animation: timerWarning 0.4s infinite alternate;
+}
+
+@keyframes timerWarning {
+  from { background-color: #0f380f; color: #8bac0f; }
+  to { background-color: #8b0000; color: #ffffff; }
+}
+
+/* Styling for the completed screen */
+.completed-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.final-score {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.rank-title {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  padding: 5px;
+  background-color: #0f380f;
+  color: #8bac0f;
+  border-radius: 4px;
+  max-width: 90%;
+}
+
+
+

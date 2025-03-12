@@ -1,0 +1,50 @@
+.nokia-keypad {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.keypad-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  max-width: 250px;
+}
+
+.keypad-button {
+  width: 75px;
+  height: 46px;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.keypad-button:hover {
+  background-color: #444;
+}
+
+.keypad-button:active {
+  background-color: #555;
+  transform: scale(0.95);
+}
+
+.key-number {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.key-letters {
+  font-size: 9px;
+  margin-top: 2px;
+} 

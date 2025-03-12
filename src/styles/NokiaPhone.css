@@ -1,0 +1,29 @@
+.nokia-phone {
+  width: 322px;
+  height: 575px;
+  background-color: #111;
+  border-radius: 23px;
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  border: 2px solid #333;
+  margin-top: 15px;
+}
+
+.phone-header {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 5px;
+}
+
+.phone-brand {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #ccc;
+  font-size: 14px;
+  letter-spacing: 2px;
+} 
